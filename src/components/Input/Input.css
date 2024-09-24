@@ -1,0 +1,53 @@
+:root{
+    --font-weight-bold: bold;
+    --font-weight-sm: 200px;
+    --font-size-sm: 10px;
+    --font-size-lg: 14px;
+    --white-color: #fff;
+    --beige-color: beige;
+    --line-height-sm:20px ;
+    --letter-spacing-sm:0.5px ;
+    --border-radius-sm: 10px;
+    --border-radius-lg: 20px;
+    --border-radius-xxl: 50%;
+    --border-width: 1px;
+    --border-style: solid;
+    --border-color: #ddd;
+}
+
+.container input{
+    width: 240px;
+    text-align: center;
+    background: transparent;
+    border-bottom: var(--border-width) var(--border-style) var(--white-color);
+    font-weight: var(--font-weight-sm);
+    padding: 10px 0;
+    transition: border 0.5s;
+    color: var(--white-color);
+    font-weight: var(--font-weight-bold);
+    margin: 8px 0;
+    /* border: none; */
+   
+}
+
+input{
+    outline: none;
+    font-size: 14px;
+}
+
+.otp-container input{
+    width: 150px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    border: 1px solid #000;
+    padding: 10px;
+    border-radius: var(--border-radius-lg);
+    margin-bottom: 10px;
+    
+}
+
+.otp-container input::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}

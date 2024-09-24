@@ -1,0 +1,25 @@
+Button{
+    border-radius: var(--border-radius-lg);
+    border: var(--border-width) var(--border-style) #ff4b2b;
+    background: #ff4b2b;
+    color: var(--white-color);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    padding: 12px 45px;
+    letter-spacing: var(--letter-spacing-sm);
+    transition: transform 80ms ease-in;
+}
+
+button:active{
+    transform: scale(0.95);
+}
+
+button:focus{
+    outline: none;
+}
+
+button.ghost{
+    background: transparent;
+    border-color: #ff4b2b;
+    background-color: #ff4b2b;
+}

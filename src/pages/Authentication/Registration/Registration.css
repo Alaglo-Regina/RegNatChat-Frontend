@@ -1,0 +1,138 @@
+:root{
+    --font-weight-bold: bold;
+    --font-weight-sm: 200px;
+    --font-size-sm: 10px;
+    --font-size-lg: 14px;
+    --white-color: #fff;
+    --beige-color: beige;
+    --line-height-sm:20px ;
+    --letter-spacing-sm:0.5px ;
+    --border-radius-sm: 10px;
+    --border-radius-lg: 20px;
+    --border-radius-xxl: 50%;
+    --border-width: 1px;
+    --border-style: solid;
+    --border-color: #ddd;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', 'sans-serif';
+    background: #f6f5f7;
+    width: 100%;
+    height: 100vh;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url(../../../assets/images/desktop.jpg);
+    background-size: cover;
+    scroll-behavior: smooth;
+}
+
+.d-flex-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.box{
+    height: 100vh;
+}
+
+h1{
+    font-weight: var(--font-weight-bold);
+    margin: 0;
+    color: var(--beige-color);
+    font-family: 'Montserrat', 'sans-serif';
+}
+
+p{
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-sm);
+    letter-spacing: var(--letter-spacing-sm);
+    margin: 20px 0;
+}
+
+span{
+    font-size:var(--font-size-sm) ;
+    color: var(--beige-color);
+}
+
+a{
+    color:var(--white-color) ;
+    font-size: var(--font-size-lg);
+    text-decoration: none;
+    margin: 15px 0;
+}
+
+.sign{
+    border-radius: var(--border-radius-lg);
+    border: var(--border-width) var(--border-style) #ff4b2b;
+    background: #ff4b2b;
+    color: var(--white-color);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    padding: 12px 45px;
+    letter-spacing: var(--letter-spacing-sm);
+}
+.d-grid-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.container{
+    position: relative;
+    border-radius: var(--border-radius-sm);
+    box-shadow: 0 14px 28px var(--white-color), 0 10px 10px var(--white-color);
+    width: 750px;
+    min-height: 450px;
+    margin: 20px 0;
+    opacity: 1;
+}
+
+/* formulaire */
+
+.container form{
+    row-gap: 10px;
+    background: #2a2b2c;
+    text-align: center;
+    min-height: 450px;
+
+}
+
+
+.form-container{
+    position: absolute;
+    width: 50%;
+    transition: all 0.6s ease-in-out;
+}
+
+/* 2ème grid */
+
+.overlay-container{  
+    width: 50%; 
+}
+
+.overlay{
+    padding-top: 60px;
+    width: 50%;
+    background: transparent;
+    background: linear-gradient(to right, #ff4b2b, #ff4b2b) no repeat 0 0 /cover;
+    color: var(--white-color);
+    
+}
+
+.overlay-panel{
+   
+    position: absolute;
+    row-gap: 30px;
+    width: 50%;
+    text-align: center;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;   
+}
