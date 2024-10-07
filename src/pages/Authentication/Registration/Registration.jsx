@@ -3,9 +3,10 @@ import Input from '../../../components/Input/Input';
 import Button from '../../../components/Button/Button';
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { toast, ToastContainer} from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 
 import './Registration.css';
+// import '../../../assets/icons/icons/css/all.min.css'
 
 
 export default function Registration() {
@@ -65,7 +66,7 @@ export default function Registration() {
             toast.success(response.data.message);
             setIsLoading(false);
             setTimeout(function () {
-                navigate("/otp-code/" + email);
+                navigate("/otp-code/"+email);
             }, 3000);
         } else {
             console.log(response.data);
@@ -82,48 +83,28 @@ export default function Registration() {
 
             setIsLoading(false);
         }
-    }
+    };
   return (
-    <div className="d-flex-col box">
-        <div className='container d-grid-2'>
-            <ToastContainer stacked/>
-                <div class="form-container sign-up-container">
-                    <form action="" className="d-flex-col" onSubmit={handleSubmit}>
-                      {/* sign up */}
-                        <h1>Créer un compte</h1>
-                        <div className="social-container">
-                            <a href="#" class="social">
-                                <i class="fas fa-facebook    "></i>
-                            </a>
-                            <a href="#" class="social">
-                                <i class="fa fa-google-plus" aria-hidden="true"></i>
-                            </a>
-                            <a href="#" class="social">
-                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                        <span>or use your email for registration</span>
-                        <Input type={"text"} value={name} placeholder={"name"} reference={ "name"} onChange={(e) =>setName(e.target.value)} />
-                        <Input type={"email"} value={email} placeholder={"email"} reference={ "email"} onChange={(e) =>setEmail(e.target.value)} />
-                        <Input type={"password"}  value={password} placeholder={"password"} reference={ "password"} onChange={(e) =>setPassword(e.target.value)} />
-                        <Input type={"password"}  value={passwordConfirm} placeholder={"password"} reference={ "passwordConfirm"} onChange={(e) =>setPasswordConfirm(e.target.value)} />
-                        
-                        <Button diseable={isLoading} type={"submit"} text={isLoading ? "chargement" : "soumettre"}>S'Inscrire</Button>
-                    </form>
-                </div>
-                <div className="overlay-container ">
-                    <div className="overlay">
-                        <div class="overlay-panel overlay-right  d-flex-col ">
-                            <h1>Salut l'Ami</h1>
-                            <p>Entrez vos données personnelles et commencez votre discussions avec nous</p>
-                            <div>
-                                <Link to={"/"} className='sign'>Connexion</Link>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+     <div className="login-signup-form animated fadeInDown">
+        <div className="form">
+          <ToastContainer stacked />               
+            <form action="" onSubmit={handleSubmit}>
+              {/* sign up */}
+              <h1 className='title'>Inscription</h1>
+              <span className='text-center span'>Inscrivez-vous à notre chat</span>
+              <Input label={"name"} type={"text"} value={name} placeholder={"Nom"} reference={"name"} onChange={(e) =>setName(e.target.value)} />
+              <Input label={"email"}  type={"email"} value={email} placeholder={"Email"} reference={"email"} onChange={(e) =>setEmail(e.target.value)} />
+              <Input label={"password"}  type={"password"} value={password} placeholder={"Mot de passe"} reference={"password"} onChange={(e) =>setPassword(e.target.value)} />
+              <Input label={"passwordConfirm"}  type={"password"}  value={passwordConfirm} placeholder={"Confirmation de Mot de passe"} reference={"passwordConfirm"} onChange={(e) =>setPasswordConfirm(e.target.value)} />
+                
+              <Button diseable={isLoading} type={"submit"} text={isLoading ? "chargement ..." : "Se Connecter"}/>
+              <p className="message">
+                Avez-vous déjà un compte ?
+                <br />
+                <Link to={"/"} >Connectez-vous à votre compte</Link>
+              </p>
+            </form>
         </div>
-     </div>
+    </div>  
   )
 }

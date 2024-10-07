@@ -6,7 +6,6 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast, ToastContainer} from "react-toastify";
 
-import './Login.css'
 
 export default function Login() {
     const [email, setEmail] = useState("");
@@ -40,37 +39,25 @@ export default function Login() {
     }
   };
 
-  return (
-    <div >
-        <div className="d-flex-col box">
-            <div className="container d-grid-2">
-                <ToastContainer />
-                <div className="form-container sign-up-container">
-                    <form action="" className="d-flex-col" onSubmit={handleSubmit}>
-                        {/* sign up */}
-                        <h1>Se connecter</h1>
-                        <span>Connectez-vous à votre compte</span>
-                        <Input type={"email"} value={email} placeholder={"email"} reference={"email"} onChange={(e) =>setEmail(e.target.value)} />
-                        <Input type={"password"}  value={password} placeholder={"password"} reference={"password"} onChange={(e) =>setPassword(e.target.value)} />
-                        
-                        <Button diseable={isLoading} type={"submit"} text={isLoading ? "chargement" : "Se Connecter"}>S'Inscrire</Button>
-                        
-                    </form>
-                </div>
-                <div className="overlay-container ">
-                    <div className="overlay">
-                        <div className="overlay-panel overlay-left d-flex-col">
-                        <h1>Content de vous revoir</h1>
-                        <p>Pour rester connecté avec nous, veuillez vous connecter avec vos informations personnelles</p>
-                        <div>
-                            <Link to={"/registration"} className='sign'>Inscription</Link>
-                        </div>
-                    </div>
-                    </div>
-                </div> 
-              </div>
-               
-        </div>  
-    </div>
+  return (   
+      <div className="login-signup-form animated fadeInDown">
+        <div className="form">
+          <ToastContainer />               
+            <form action="" onSubmit={handleSubmit}>
+              {/* sign up */}
+              <h1 className='title'>Connexion</h1>
+              <span className='text-center span'>Connectez-vous à votre compte</span>
+              <Input type={"email"} value={email} placeholder={"Email"} reference={"email"} onChange={(e) =>setEmail(e.target.value)} />
+              <Input type={"password"}  value={password} placeholder={"Mot de passe"} reference={"password"} onChange={(e) =>setPassword(e.target.value)} />
+                
+              <Button className='btn btn-block' diseable={isLoading} type={"submit"} text={isLoading ? "chargement" : "Se Connecter"}/>
+              <p className="message">
+                N'avez-vous pas de compte ?
+                <br />
+                <Link to="/registration" >Créer votre compte</Link>
+              </p>
+            </form>
+        </div>
+      </div>               
   )
 }

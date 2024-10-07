@@ -11,7 +11,7 @@ export default function Button({
   return (
       <div>
           <button
-              className=''
+              className='btn btn-block'
               onClick={onClick}
               type={type}
               disabled={diseable}

@@ -26,7 +26,7 @@ export default function CheckOtpCode() {
     formData.set("email", params.email);
 
     const response = await axios.post(
-      "http://127.0.0.1:8000/api/v2.0.0/otp-code",
+      "http://127.0.0.1:8000/api/v2.0.0/otpCode",
       formData
     );
 
@@ -39,32 +39,31 @@ export default function CheckOtpCode() {
     }
   };
     return (
-      <div className="box d-flex">
-        <div className='otp-container d-flex-col'>
-
+        <div className='login-signup-form animated fadeInDown'>
           <ToastContainer />
-          <p>
-            Un code vous a été envoyé dans votre boîte mail(
-            {localStorage.getItem("email")}). <br />  Vérifiez-le et veuillez le saisir
-          </p>
-          <form action="" onSubmit={handleSubmit}>
-            <Input
-              type={"number"}
-              // label={"OTP Code"}
-              value={OtpCode}
-              reference={"otp"}
-              placeholder={"Saisir le code ici"}
-              onChange={(e) => {
-                setOtpCode(e.target.value);
-              }}
-            />
-            <Button
-              disabled={isLoading}
-              text={isLoading ? "Chargement ..." : "Soumettre"}
-              type={"submit"}
-            />
-          </form>
-        </div>
+          <div className="form">
+            <p className="message">
+              Un code vous a été envoyé dans votre boîte mail(
+              {localStorage.getItem("email")}). <br />  Vérifiez-le et veuillez le saisir
+            </p>
+            <form action="" onSubmit={handleSubmit}>
+              <Input
+                type={"number"}
+                // label={"OTP Code"}
+                value={OtpCode}
+                reference={"otp"}
+                placeholder={"Saisir le code ici"}
+                onChange={(e) => {
+                  setOtpCode(e.target.value);
+                }}
+              />
+              <Button
+                disabled={isLoading}
+                text={isLoading ? "Chargement ..." : "Soumettre"}
+                type={"submit"}
+              />
+            </form>
+          </div>
       </div>    
   )
 }
